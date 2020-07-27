@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -15,6 +19,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "Fauna",
+        fieldName: "fauna",
+        url: "https://graphql.fauna.com/graphql",
+        headers: {
+          Authorization: `Bearer ${process.env.FAUNA_SECRET_SERVER}`,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
