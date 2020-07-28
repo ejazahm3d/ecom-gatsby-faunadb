@@ -4,6 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { AllProductsQuery } from "../../graphql-types"
+import { Flex } from "@chakra-ui/core"
 
 export const query = graphql`
   query allProducts {
@@ -25,16 +26,16 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <ul>
-        {data.fauna.allProducts.data.map(product => (
-          <li key={product._id}>
-            Product {product.title} - Desc: {product.description} Price:{" "}
-            {product.price}$
-          </li>
-        ))}
-      </ul>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+      <Flex>
+        <ul>
+          {data.fauna.allProducts.data.map(product => (
+            <li key={product._id}>
+              Product {product.title} - Desc: {product.description} Price:{" "}
+              {product.price}$
+            </li>
+          ))}
+        </ul>
+      </Flex>
     </Layout>
   )
 }
