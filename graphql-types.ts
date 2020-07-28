@@ -2799,7 +2799,10 @@ export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSit
 export type AllProductsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllProductsQuery = { fauna: { allProducts: { data: Array<Maybe<Pick<Fauna_Product, '_id' | 'price' | 'title' | 'description'>>> } } };
+export type AllProductsQuery = { fauna: { allProducts: { data: Array<Maybe<(
+        Pick<Fauna_Product, '_id' | 'price' | 'title' | 'description' | 'image'>
+        & { reviews: { data: Array<Maybe<Pick<Fauna_Review, '_id' | 'stars' | 'username'>>> } }
+      )>> } } };
 
 export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 

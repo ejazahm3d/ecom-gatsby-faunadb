@@ -33,6 +33,7 @@ const Layout: React.FC = ({ children }) => {
         flexWrap="nowrap"
         justify="center"
         align="center"
+        width="100%"
       >
         {children}
       </Flex>
