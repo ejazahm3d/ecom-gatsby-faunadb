@@ -61,6 +61,7 @@ const IndexPage = () => {
             <Box m="1rem" key={product._id}>
               <Card
                 data={{
+                  id: product._id,
                   title: product?.title,
                   imageUrl: product?.image[0],
                   formattedPrice: product?.price,

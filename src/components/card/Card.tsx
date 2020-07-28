@@ -1,14 +1,14 @@
 import * as React from "react"
-import { Box, Image, Badge } from "@chakra-ui/core"
+import { Box, Image, Badge, Button } from "@chakra-ui/core"
 
 import { motion } from "framer-motion"
 import { FaStar } from "react-icons/fa"
-import { string, number } from "prop-types"
 
 const MotionBox = motion.custom(Box)
 
 interface Props {
   data: {
+    id: string
     imageUrl: string
     imageAlt: string
     title: string
@@ -22,7 +22,7 @@ const Card: React.FC<Props> = props => {
   const property = props.data
   return (
     <MotionBox
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
       maxW="sm"
       borderWidth="1px"
       rounded="lg"
@@ -39,7 +39,7 @@ const Card: React.FC<Props> = props => {
 
       <Box p="6">
         <Box d="flex" alignItems="baseline">
-          <Badge rounded="full" px="2" variantColor="teal">
+          <Badge rounded="full" px="2" variantColor="blue">
             New
           </Badge>
         </Box>
@@ -63,12 +63,30 @@ const Card: React.FC<Props> = props => {
               <Box
                 as={FaStar}
                 key={i}
-                color={i < property.rating ? "teal.500" : "gray.300"}
+                color={i < property.rating ? "blue.500" : "gray.300"}
               />
             ))}
           <Box as="span" ml="2" color="gray.600" fontSize="sm">
             {property.reviewCount} reviews
           </Box>
+        </Box>
+        <Box d="flex" justifyContent="center" mt="1rem">
+          <Button
+            variantColor="blue"
+            width="100%"
+            className={`snipcart-add-item`}
+            data-item-id={property.id}
+            data-item-name={property.title}
+            data-item-image={property.imageUrl}
+            data-item-price={
+              property.formattedPrice
+                ? property.formattedPrice
+                : property.formattedPrice
+            }
+            data-item-url="/"
+          >
+            Add to Cart
+          </Button>
         </Box>
       </Box>
     </MotionBox>

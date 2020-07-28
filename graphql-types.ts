@@ -2366,6 +2366,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___fieldName'
   | 'pluginCreator___pluginOptions___url'
   | 'pluginCreator___pluginOptions___headers___Authorization'
+  | 'pluginCreator___pluginOptions___apiKey'
+  | 'pluginCreator___pluginOptions___autopop'
+  | 'pluginCreator___pluginOptions___js'
+  | 'pluginCreator___pluginOptions___styles'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
   | 'pluginCreator___pluginOptions___background_color'
@@ -2570,6 +2574,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___fieldName'
   | 'pluginOptions___url'
   | 'pluginOptions___headers___Authorization'
+  | 'pluginOptions___apiKey'
+  | 'pluginOptions___autopop'
+  | 'pluginOptions___js'
+  | 'pluginOptions___styles'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
   | 'pluginOptions___background_color'
@@ -2703,6 +2711,10 @@ export type SitePluginPluginOptions = {
   fieldName?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   headers?: Maybe<SitePluginPluginOptionsHeaders>;
+  apiKey?: Maybe<Scalars['String']>;
+  autopop?: Maybe<Scalars['Boolean']>;
+  js?: Maybe<Scalars['String']>;
+  styles?: Maybe<Scalars['String']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -2724,6 +2736,10 @@ export type SitePluginPluginOptionsFilterInput = {
   fieldName?: Maybe<StringQueryOperatorInput>;
   url?: Maybe<StringQueryOperatorInput>;
   headers?: Maybe<SitePluginPluginOptionsHeadersFilterInput>;
+  apiKey?: Maybe<StringQueryOperatorInput>;
+  autopop?: Maybe<BooleanQueryOperatorInput>;
+  js?: Maybe<StringQueryOperatorInput>;
+  styles?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;

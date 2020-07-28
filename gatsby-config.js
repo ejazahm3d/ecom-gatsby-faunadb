@@ -1,12 +1,20 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+// Define site URL here
+let URL
+if (process.env.NODE_ENV === "production") {
+  URL = "https://gatsby-faunadb-ts-2020.netlify.app"
+} else {
+  URL = "http://localhost:8000"
+}
 
 module.exports = {
   siteMetadata: {
     title: `Gatsby Fauna`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    siteUrl: URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,6 +38,15 @@ module.exports = {
         headers: {
           Authorization: `Bearer ${process.env.FAUNA_SECRET_SERVER}`,
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-snipcart",
+      options: {
+        apiKey: process.env.SNIPCART_API,
+        autopop: true,
+        js: "https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js",
+        styles: "https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css",
       },
     },
     {
