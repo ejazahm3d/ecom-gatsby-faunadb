@@ -2070,6 +2070,7 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___author'
+  | 'siteMetadata___siteUrl'
   | 'port'
   | 'host'
   | 'polyfill'
@@ -2367,7 +2368,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___url'
   | 'pluginCreator___pluginOptions___headers___Authorization'
   | 'pluginCreator___pluginOptions___apiKey'
-  | 'pluginCreator___pluginOptions___autopop'
   | 'pluginCreator___pluginOptions___js'
   | 'pluginCreator___pluginOptions___styles'
   | 'pluginCreator___pluginOptions___short_name'
@@ -2575,7 +2575,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___url'
   | 'pluginOptions___headers___Authorization'
   | 'pluginOptions___apiKey'
-  | 'pluginOptions___autopop'
   | 'pluginOptions___js'
   | 'pluginOptions___styles'
   | 'pluginOptions___short_name'
@@ -2712,7 +2711,6 @@ export type SitePluginPluginOptions = {
   url?: Maybe<Scalars['String']>;
   headers?: Maybe<SitePluginPluginOptionsHeaders>;
   apiKey?: Maybe<Scalars['String']>;
-  autopop?: Maybe<Scalars['Boolean']>;
   js?: Maybe<Scalars['String']>;
   styles?: Maybe<Scalars['String']>;
   short_name?: Maybe<Scalars['String']>;
@@ -2737,7 +2735,6 @@ export type SitePluginPluginOptionsFilterInput = {
   url?: Maybe<StringQueryOperatorInput>;
   headers?: Maybe<SitePluginPluginOptionsHeadersFilterInput>;
   apiKey?: Maybe<StringQueryOperatorInput>;
-  autopop?: Maybe<BooleanQueryOperatorInput>;
   js?: Maybe<StringQueryOperatorInput>;
   styles?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
@@ -2771,12 +2768,14 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
+  siteUrl?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
+  siteUrl?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {

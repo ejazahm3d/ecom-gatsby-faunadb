@@ -1,6 +1,8 @@
 import * as React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { AllProductsQuery } from "../../graphql-types"
@@ -35,6 +37,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <ToastContainer />
+
       <Flex
         p={{ xs: "2rem 1rem", sm: "3rem 2rem", lg: "3rem 5rem" }}
         align="center"

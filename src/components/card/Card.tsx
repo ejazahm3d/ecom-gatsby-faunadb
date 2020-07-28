@@ -3,6 +3,7 @@ import { Box, Image, Badge, Button } from "@chakra-ui/core"
 
 import { motion } from "framer-motion"
 import { FaStar } from "react-icons/fa"
+import { toast } from "react-toastify"
 
 const MotionBox = motion.custom(Box)
 
@@ -72,6 +73,11 @@ const Card: React.FC<Props> = props => {
         </Box>
         <Box d="flex" justifyContent="center" mt="1rem">
           <Button
+            onClick={() =>
+              toast("Added to cart", {
+                type: "success",
+              })
+            }
             variantColor="blue"
             width="100%"
             className={`snipcart-add-item`}
