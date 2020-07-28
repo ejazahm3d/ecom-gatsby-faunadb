@@ -20,6 +20,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-graphql-codegen`,
+    `gatsby-plugin-chakra-ui`,
     {
       resolve: "gatsby-source-graphql",
       options: {
